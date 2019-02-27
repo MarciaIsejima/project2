@@ -1,0 +1,75 @@
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700|Raleway:300,400,500,700');
+
+html {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  color: rgb(126, 126, 126);
+}
+
+.App {
+    max-width: 800px;
+    margin: auto;
+}
+
+.heading-2 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 1.5;
+    color: rgb(92, 92, 92);
+}
+
+.heading-3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2em;
+  font-weight: 700;
+  line-height: 1;
+  color: rgb(92, 92, 92);
+}
+
+.button-orange {
+  padding: 5px 25px;
+  border: 3px solid #ff8500;
+  font-size: 0.875em;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  color: white;
+  border-radius: 40px;
+  height: 40px;
+  background-color: #ff8500;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+.button-green {
+  padding: 5px 25px;
+  border: 3px solid #90d200;
+  font-size: 0.875em;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  color: white;
+  border-radius: 40px;
+  height: 40px;
+  background-color: #90d200;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+.paragraph {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9em;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgb(92, 92, 92);
+}
+
+.paragraph-small {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.75em;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgb(92, 92, 92);
+}

@@ -8,7 +8,7 @@ const NutritionFactsContainer = (props) => {
 
     return(
         <section className="recipe-nutrition-facts">
-            <h3 className="heading-3"><img src='././images/ingredients.png' alt="" aria-hidden="true"></img>Nutrition Facts</h3>
+            <h3 className="heading-3"><img className="nutrition-facts-image" src="./images/icon/nutrition_fact.svg" alt="" aria-hidden="true"></img>Nutrition Facts</h3>
             <div className="nutrition-facts-wrapper">
                 <CaloriesDistribution
                     recipe = {props.recipe}

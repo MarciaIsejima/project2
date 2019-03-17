@@ -7,9 +7,14 @@ html {
   color: rgb(126, 126, 126);
 }
 
-.App {
-    max-width: 800px;
+.main-wrapper {
+    max-width: 900px;
     margin: auto;
+}
+
+.content {
+  max-width: 800px;
+  margin: auto;
 }
 
 .heading-2 {
@@ -72,4 +77,54 @@ html {
   font-weight: 400;
   line-height: 1.4;
   color: rgb(92, 92, 92);
+}
+
+a{
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9em;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgb(92, 92, 92);
+  text-decoration-style: none;
+}
+
+a:visited{
+  color: rgb(92, 92, 92);
+}
+
+
+/* NAVBAR */
+.active {
+  color:  #ff8500;
+}
+
+.active:visited{
+  color: #ff8500;
+}
+
+ul.header li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+}
+ul.header {
+  background-color: transparent;
+  padding: 0;
+}
+ul.header li a {
+  color:  rgb(71, 71, 71);
+  font-weight: bold;
+  font-size: 0.9em;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 2px 12px;
+  display: inline-block;
+  margin: 0px 15px;
+}
+
+ul li:last-child a{
+  
+  border:  #ff8500 solid 2px;
+  border-radius: 20px;
+  float: right;
 }

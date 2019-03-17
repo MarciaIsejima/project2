@@ -140,3 +140,24 @@ export function getCaloriesDistribution(recipe) {
     return(caloriesDistribution);
 
 }
+
+// function that retrieves a list of recipes, given a condition
+export function retrieveRecipeList(condition) {
+    let list = [];
+    let requestURL = `http://api.yummly.com/v1/api/recipes?_app_id=${process.env.REACT_APP_YUMMLY_APP_ID}&_app_key=${process.env.REACT_APP_YUMMLY_API_KEY}`
+
+    fetch(requestURL)
+    .then(res => res.json())
+    .then(
+    (data) => {
+        return(data.matches)
+    },
+    // Note: it's important to handle errors here
+    // instead of a catch() block so that we don't swallow
+    // exceptions from actual bugs in components.
+    (error) => {
+        return(error)
+    });
+
+    return(list);
+}

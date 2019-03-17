@@ -1,9 +1,9 @@
 import React from 'react';
-//import './App.css';
+import './SingleRecipe.css';
 import RecipeItem from './components/RecipeItem';
 import IngredientsList from './components/IngredientsList';
 import NutritionFactsContainer from './components/NutritionFactsContainer';
-import YummlyAttribution from './components/YummlyAttribution.js';
+import RecipeList from './components/RecipeList';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,12 +11,14 @@ class App extends React.Component {
     this.state = {
       error: null,
       currentRecipe: {},
+      relatedRecipes: []
     };
   }
 
   // function that retrieves a recipe, given its id
   retrieveRecipe(recipeId) {
     const requestURL = 'http://api.yummly.com/v1/api/recipe/'+recipeId+'?_app_id='+process.env.REACT_APP_YUMMLY_APP_ID+'&_app_key='+process.env.REACT_APP_YUMMLY_API_KEY;
+
     fetch(requestURL)
     .then(res => res.json())
     .then(
@@ -38,10 +40,12 @@ class App extends React.Component {
     )
   };
 
+  
   componentDidMount() {
     //this.retrieveRecipe("Sauteed-Zucchini-and-Cherry-Tomatoes-2198997")
-    this.retrieveRecipe("Chickpea-Avocado-Salad-2071556")
-    
+    //this.retrieveRecipe("Asparagus-stir-fry-308736")
+    //this.retrieveRecipe("Chickpea-Avocado-Salad-2071556")
+    this.retrieveRecipe("Easy-BBQ-Tofu-440483")
   }
 
   render() {
@@ -55,7 +59,7 @@ class App extends React.Component {
           <RecipeItem recipe={this.state.currentRecipe}/>
           <IngredientsList recipe={this.state.currentRecipe}/>
           <NutritionFactsContainer recipe={this.state.currentRecipe}/>
-          <YummlyAttribution recipe={this.state.currentRecipe}/>
+          <RecipeList title="Related Recipes"/>
         </div>
       );
     }

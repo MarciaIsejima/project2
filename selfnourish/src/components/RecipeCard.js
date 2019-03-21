@@ -12,7 +12,6 @@ import red from '@material-ui/core/colors/red';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import StarIcon from '@material-ui/icons/Star';
-import {Redirect} from 'react-router-dom';
 
 const styles = theme => ({
   card: {
@@ -52,15 +51,12 @@ class RecipeCard extends React.Component {
   };
 
   handleClickRecipe = () => {
-    window.alert("user clicked!");
-		this.setState(state => ({ selectedRecipeId: "aaaa"}));
+
+		this.props.retrieveRecipe(this.props.recipe.id);
   };
 
   render() {
 
-		if (this.state.selectedRecipeId!=='') {
-			return <Redirect to='/recipe/single' />
-		}
     const { classes } = this.props;
     
     //changes the image URL to load a better resolution image

@@ -8,10 +8,11 @@ class SearchRecipe extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchIgredient: '',
+      searchIngredient: '',
       doSearch: false
     };
   }
+
 
 
   handleChange(event) {
@@ -19,14 +20,14 @@ class SearchRecipe extends Component {
     const value = event.target.value;
 
     this.setState({
-      searchIgredient: value,
+      searchIngredient: value,
       doSearch: false
     });
-window.alert(this.state.searchIngredient)
+
   }
 
-  handleSubmit(event) {
-    window.alert(this.state.searchIngredient)
+  handleSubmit() {
+       
     this.setState({
       doSearch: true
     });
@@ -34,16 +35,17 @@ window.alert(this.state.searchIngredient)
   };
 
   render() {
+
     return (
       <div>
         <SearchForm
-          currentDetails={this.state.searchIgredient}
+          currentDetails={this.state.searchIngredient}
           handleChange={this.handleChange.bind(this)}
           handleSubmit={this.handleSubmit.bind(this)}
         />
         <RecipeList
           title = {(this.state.searchIgredient==='')? "Popular Recipes" : "Recommended Recipes"}
-          ingredient = {this.state.searchIgredient}
+          ingredient = {this.state.searchIngredient}
           doSearch = {this.state.doSearch}
         />
       </div>

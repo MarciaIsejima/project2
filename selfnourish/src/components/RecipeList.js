@@ -15,18 +15,22 @@ class RecipientList extends React.Component{
           list: []
         }
     } 
+
+		retrieveRecipe(id) {
+        this.props.retrieveRecipe(id);
+    }
     
     searchRecipe(ingredient){
         this.setState({ isLoading: true });
 
         let requestURL = `http://api.yummly.com/v1/api/recipes?_app_id=${process.env.REACT_APP_YUMMLY_APP_ID}&_app_key=${process.env.REACT_APP_YUMMLY_API_KEY}`
-        let query = '&q=onion'
-        //const query='&maxResult=20&start=10'
+        //let query = '&q=onion'
+        let query='&maxResult=20'
         //query +='&maxResult=21&requirePictures=true'
         
-        // if (ingredient!=='') {
-        //     query = query + "&q=" + ingredient
-        // }
+        if (!ingredient) {
+            query = query + "&q=" + ingredient
+        }
         console.log(query)
         fetch(requestURL+query)
           .then(response => {
@@ -36,7 +40,7 @@ class RecipientList extends React.Component{
               throw new Error('Something went wrong ...');
             }
           })
-          .then(data => this.setState({ list: data.matches, isLoading: false }))
+          .then(data => {this.setState({ list: data.matches, isLoading: false })})
           .catch(error => this.setState({ error, isLoading: false }));
     }
 
@@ -45,8 +49,10 @@ class RecipientList extends React.Component{
     }
 
     componentDidUpdate(prevProps) {
-        
+        // window.alert(this.props.ingredient);
+				// window.alert(prevProps.ingredient);
         if (this.props.ingredient !== prevProps.ingredient && this.props.doSearch ) {
+					
             this.searchRecipe(this.props.ingredient)
         }
     }
@@ -79,7 +85,11 @@ class RecipientList extends React.Component{
                     <div>
                         <div className="recipe-cards-container">
                             {current.map(item => 
-                                <RecipeCard key={item.index} recipe={item}/>
+                                <RecipeCard 
+																	key={item.id} 
+																	recipe={item}
+																	retrieveRecipe={this.retrieveRecipe.bind(this)}
+																/>
                             )}
                         </div>
                         <div className="more-button-container">

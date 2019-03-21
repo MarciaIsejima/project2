@@ -10,8 +10,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       error: null,
-      currentRecipe: {},
-      relatedRecipes: []
+			currentCondition: {},
+      currentRecipe: {}
     };
   }
 
@@ -54,12 +54,16 @@ class App extends React.Component {
       return null
     } else {
       console.log(this.state.currentRecipe)
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
       return (
         <div className="App">
           <RecipeItem recipe={this.state.currentRecipe}/>
           <IngredientsList recipe={this.state.currentRecipe}/>
           <NutritionFactsContainer recipe={this.state.currentRecipe}/>
-          <RecipeList title="Related Recipes"/>
+          <RecipeList 
+						title="Related Recipes"
+						retrieveRecipe={this.retrieveRecipe.bind(this)}/>
         </div>
       );
     }

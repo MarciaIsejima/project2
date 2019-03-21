@@ -2,13 +2,16 @@ import React from 'react';
 import './Condition.css';
 import RecipeList from './RecipeList';
 import SimpleBarChart from './Charts/SimpleBarChart';
+import {Redirect} from "react-router-dom";
+import LinkButton from './LinkButton';
 
 class Condition extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       error: null,
-      selectedCondition: {id: 0}
+      selectedCondition: {id: 0},
+			selectedRecipeId: '',
     };
   }
 
@@ -47,12 +50,21 @@ class Condition extends React.Component {
         return(title);
     };
 
-//   componentDidMount() {
-//     this.updateCondition({id: 1})
-//   }
+		// if user selected a recipe from the recipe list
+		retrieveRecipe(id){
+			if (id!==''){
+				this.setState(
+					{selectedRecipeId: id}
+				);
+			}
 
+		}
 
   render() {
+
+		if (this.state.selectedRecipeId!=='') {
+			return <Redirect to='/recipe/single' />
+		}
 
     let conditions = this.retrieveConditions();
 
@@ -74,7 +86,7 @@ class Condition extends React.Component {
             <section className="condition-section">
                 <div className="condition-section-header">
                     <h2 className="heading-2">Your Health Condition</h2>
-                    <button className="search-recipe-button">Search Recipes</button>
+										<LinkButton className="button-orange search-recipe-button" to='../search'>Search Recipes</LinkButton>
                 </div>
                 <p>Select a condition to view general guidelines and recipes for a healthy diet: </p>
                 <ul className="conditions-list">
@@ -90,14 +102,18 @@ class Condition extends React.Component {
                     </div>
                     <div>
                         <h3 className="heading-3">{conditions[this.state.selectedCondition.id].name}</h3>
-                        {conditions[this.state.selectedCondition.id].guidelines.map((line) => <p className="paragraph-small">{line}</p>
+                        {conditions[this.state.selectedCondition.id].guidelines.map((line) => <p key={line} className="paragraph-small">{line}</p>
                             
                         )}
                     </div>
                 </div>
             </section>
             <section className="related-recipes-section">
-                <RecipeList title={this.retrieveTitle(conditions[this.state.selectedCondition.id])}/>
+                <RecipeList 
+									title={this.retrieveTitle(conditions[this.state.selectedCondition.id])}
+									condition={this.state.selectedCondition}
+									retrieveRecipe={this.retrieveRecipe.bind(this)}
+								/>
             </section>
 
           </div>

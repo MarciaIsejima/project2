@@ -48,6 +48,10 @@ html {
 
 }
 
+.button-orange:hover{
+ cursor: pointer;
+}
+
 .button-green {
   padding: 5px 25px;
   border: 3px solid #90d200;

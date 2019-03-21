@@ -26,7 +26,6 @@ class SearchForm extends React.Component {
                             name="currentIngredient"
                             type="text"
                             placeholder="Enter ingredient"
-                            // value={this.props.currentDetails}
                             onChange={this.props.handleChange}/>
                     </div>
                     <div className="input-field col s2">

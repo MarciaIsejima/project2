@@ -6,8 +6,8 @@ import {
 } from "react-router-dom";
 import Home from "./Home";
 import Condition from "./components/Condition";
-import Plans from "./Plans";
-import About from "./About";
+// import Plans from "./Plans";
+// import About from "./About";
 import Contact from "./Contact";
 import SearchRecipe from "./components/SearchRecipe";
 import SingleRecipe from './SingleRecipe';
@@ -32,6 +32,7 @@ class Main extends Component {
                 <div className="content">
                     <Route exact path="/" component={Home}/>
                     <Route path="/recipe" component={Condition}/>
+										<Route path="/recipe/search" component={SearchRecipe}/>
 										<Route path="/recipe/single" component={SingleRecipe}/>
                     <Route path="/plans" component={SearchRecipe}/>
                     <Route path="/about" component={SingleRecipe}/>

@@ -52,7 +52,7 @@ const SimpleBarChart = props => {
         layout="vertical"
       >
         <Text textAnchor="start"></Text>
-        <XAxis hide="true" type="number" dataKey="value" domain={[0, 100]} tick={false}>
+        <XAxis hide={true} type="number" dataKey="value" domain={[0, 100]} tick={false}>
             <Label value="Daily intake level" offset={0} position="insideBottom" fontWeight="bold" fontSize="0.8em"></Label>
         </XAxis>
         {/* <XAxis type="category" dataKey="level" /> */}
@@ -60,7 +60,7 @@ const SimpleBarChart = props => {
             <Label position="insideLeft"></Label>
         </YAxis>
         <Bar dataKey="value" barSize={20} fill='#90d200' radius={3}>
-            <LabelList dataKey="level" position="middle" fontSize="0.6em" stroke="white"/>
+            <LabelList dataKey="level" position="center" fontSize="0.6em" stroke="white"/>
         </Bar>
       </BarChart>
     );

@@ -3,7 +3,7 @@ import './SingleRecipe.css';
 import RecipeItem from './components/RecipeItem';
 import IngredientsList from './components/IngredientsList';
 import NutritionFactsContainer from './components/NutritionFactsContainer';
-import RecipeList from './components/RecipeList';
+import SearchRecipe from './components/SearchRecipe';
 
 class App extends React.Component {
   constructor(props) {
@@ -45,7 +45,8 @@ class App extends React.Component {
     //this.retrieveRecipe("Sauteed-Zucchini-and-Cherry-Tomatoes-2198997")
     //this.retrieveRecipe("Asparagus-stir-fry-308736")
     //this.retrieveRecipe("Chickpea-Avocado-Salad-2071556")
-    this.retrieveRecipe("Easy-BBQ-Tofu-440483")
+ window.alert("single: "+ this.props.match.params.recipeId)   
+		this.retrieveRecipe(this.props.match.params.recipeId)
   }
 
   render() {
@@ -61,10 +62,12 @@ class App extends React.Component {
           <RecipeItem recipe={this.state.currentRecipe}/>
           <IngredientsList recipe={this.state.currentRecipe}/>
           <NutritionFactsContainer recipe={this.state.currentRecipe}/>
-          <RecipeList 
-						title="Related Recipes"
-						retrieveRecipe={this.retrieveRecipe.bind(this)}/>
-        </div>
+					<SearchRecipe
+						title = "Related Recipes"
+						ingredient = {this.props.searchIngredient}
+						retrieveRecipe={this.retrieveRecipe.bind(this)}
+					/>
+				</div>       
       );
     }
 

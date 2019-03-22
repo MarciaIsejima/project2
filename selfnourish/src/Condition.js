@@ -1,9 +1,9 @@
 import React from 'react';
 import './Condition.css';
-import RecipeList from './RecipeList';
-import SimpleBarChart from './Charts/SimpleBarChart';
+import SearchRecipe from "./components/SearchRecipe";
+import SimpleBarChart from './components/Charts/SimpleBarChart';
 import {Redirect} from "react-router-dom";
-import LinkButton from './LinkButton';
+import LinkButton from './components/LinkButton';
 
 class Condition extends React.Component {
   constructor(props) {
@@ -63,7 +63,7 @@ class Condition extends React.Component {
   render() {
 
 		if (this.state.selectedRecipeId!=='') {
-			return <Redirect to='/recipe/single' />
+			return <Redirect to={'/recipe/single/'+this.state.selectedRecipeId} />
 		}
 
     let conditions = this.retrieveConditions();
@@ -109,11 +109,11 @@ class Condition extends React.Component {
                 </div>
             </section>
             <section className="related-recipes-section">
-                <RecipeList 
-									title={this.retrieveTitle(conditions[this.state.selectedCondition.id])}
-									condition={this.state.selectedCondition}
-									retrieveRecipe={this.retrieveRecipe.bind(this)}
-								/>
+							<SearchRecipe
+								title = {(this.state.searchIgredient==='')? "Popular Recipes" : "Recommended Recipes"}
+								condition = {this.state.selectedCondition}
+								retrieveRecipe={this.retrieveRecipe.bind(this)}
+							/>
             </section>
 
           </div>

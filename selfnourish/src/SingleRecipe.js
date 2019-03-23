@@ -42,11 +42,7 @@ class App extends React.Component {
 
   
   componentDidMount() {
-    //this.retrieveRecipe("Sauteed-Zucchini-and-Cherry-Tomatoes-2198997")
-    //this.retrieveRecipe("Asparagus-stir-fry-308736")
-    //this.retrieveRecipe("Chickpea-Avocado-Salad-2071556")
- window.alert("single: "+ this.props.match.params.recipeId)   
-		this.retrieveRecipe(this.props.match.params.recipeId)
+ 		this.retrieveRecipe(this.props.match.params.recipeId)
   }
 
   render() {

@@ -7,8 +7,8 @@ import {
 } from "react-router-dom";
 import Home from "./Home";
 import Condition from "./Condition";
-// import Plans from "./Plans";
-// import About from "./About";
+import Plans from "./Plans";
+import About from "./About";
 import Contact from "./Contact";
 import Search from "./Search";
 import SingleRecipe from './SingleRecipe';
@@ -36,8 +36,8 @@ class Main extends Component {
 										<Route path="/recipe/search" component={Search}/>
 										<Route path="/recipe/single/:recipeId" component={SingleRecipe}/>
                     <Route path="/recipe" component={Condition}/>
-                    <Route path="/plans" component={Search}/>
-                    <Route path="/about" component={SingleRecipe}/>
+                    <Route path="/plans" component={Plans}/>
+                    <Route path="/about" component={About}/>
                     <Route path="/contact" component={Contact}/>
                     <Route path="/search" component={Search}/>
                   </Switch>  

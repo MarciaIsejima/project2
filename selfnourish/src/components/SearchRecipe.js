@@ -14,21 +14,17 @@ class SearchRecipe extends Component {
 
 	retrieveRecipe(id) {
 			this.props.retrieveRecipe(id);
-			window.alert("search recipe: " + id)
 	}
 
 	searchRecipes(ingredient){
 		this.setState({ isLoading: true });
 
 		let requestURL = `http://api.yummly.com/v1/api/recipes?_app_id=${process.env.REACT_APP_YUMMLY_APP_ID}&_app_key=${process.env.REACT_APP_YUMMLY_API_KEY}`
-		//let query = '&q=onion'
-		let query='&maxResult=20'
-		//query +='&maxResult=21&requirePictures=true'
+		let query='&maxResult=20&requirePictures=true'
 	
-// 		if (ingredient!=='') {
-// window.alert("search recipe: "+ingredient)	
-// 				query = query + "&q=" + "broccoli"
-// 		}
+ 		if (ingredient!=='') {
+				query = query + "&q="+ ingredient
+ 		}
 console.log(query)
 		fetch(requestURL+query)
 			.then(response => {
@@ -43,11 +39,16 @@ console.log(query)
 	}
 
 	componentDidMount(){
-		this.searchRecipes(this.props.ingredient)
+
+			this.searchRecipes(this.props.ingredient)
+
 	}
 
-
-
+	componentDidUpdate(prevProps) {
+		if (this.props.ingredient !== prevProps.ingredient) {
+			this.searchRecipes(this.props.ingredient);
+		}
+	}
 
   render() {
 

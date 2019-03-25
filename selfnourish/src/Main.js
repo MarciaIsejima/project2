@@ -33,8 +33,8 @@ class Main extends Component {
                 <div className="content">
 									<Switch>
                     <Route exact path="/" component={Home}/>
-										<Route path="/recipe/search" component={Search}/>
-										<Route path="/recipe/single/:recipeId" component={SingleRecipe}/>
+										<Route path="/recipe/search/:nutrientConstraints" component={Search}/>
+										<Route path="/recipe/single/:recipeId/:nutrientConstraints/:searchIngredient?" component={SingleRecipe}/>
                     <Route path="/recipe" component={Condition}/>
                     <Route path="/plans" component={Plans}/>
                     <Route path="/about" component={About}/>

@@ -16,16 +16,22 @@ class SearchRecipe extends Component {
 			this.props.retrieveRecipe(id);
 	}
 
-	searchRecipes(ingredient){
+	searchRecipes(ingredient, nutrientConstraints){
 		this.setState({ isLoading: true });
 
 		let requestURL = `http://api.yummly.com/v1/api/recipes?_app_id=${process.env.REACT_APP_YUMMLY_APP_ID}&_app_key=${process.env.REACT_APP_YUMMLY_API_KEY}`
-		let query='&maxResult=20&requirePictures=true'
-	
- 		if (ingredient!=='') {
+		let query='&maxResult=20&requirePictures=true&excludedCourse[]=course^course-Beverages'
+
+ 		if (ingredient) {
 				query = query + "&q="+ ingredient
  		}
-console.log(query)
+
+		if (nutrientConstraints) {
+			query = query + nutrientConstraints
+		}
+
+		
+
 		fetch(requestURL+query)
 			.then(response => {
 				if (response.ok) {
@@ -39,14 +45,13 @@ console.log(query)
 	}
 
 	componentDidMount(){
-
-			this.searchRecipes(this.props.ingredient)
+			this.searchRecipes(this.props.ingredient, this.props.nutrientConstraints)
 
 	}
 
 	componentDidUpdate(prevProps) {
-		if (this.props.ingredient !== prevProps.ingredient) {
-			this.searchRecipes(this.props.ingredient);
+		if ((this.props.ingredient !== prevProps.ingredient) || (this.props.nutrientConstraints !== prevProps.nutrientConstraints)) {
+			this.searchRecipes(this.props.ingredient, this.props.nutrientConstraints);
 		}
 	}
 

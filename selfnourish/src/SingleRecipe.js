@@ -10,8 +10,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       error: null,
-			currentCondition: {},
-      currentRecipe: {}
+			currentRecipe: {}
     };
   }
 
@@ -60,7 +59,8 @@ class App extends React.Component {
           <NutritionFactsContainer recipe={this.state.currentRecipe}/>
 					<SearchRecipe
 						title = "Related Recipes"
-						ingredient = {this.props.searchIngredient}
+						ingredient = {this.props.match.params.searchIngredient}
+						nutrientConstraints = {this.props.match.params.nutrientConstraints}
 						retrieveRecipe={this.retrieveRecipe.bind(this)}
 					/>
 				</div>       

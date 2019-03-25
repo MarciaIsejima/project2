@@ -46,7 +46,8 @@ class Search extends Component {
 
 		if (this.state.selectedRecipeId!=='') {
 
-			return <Redirect to={{pathname:'/recipe/single/'+ this.state.selectedRecipeId }} />
+			return <Redirect to={'/recipe/single/'+this.state.selectedRecipeId+'/'+this.props.match.params.nutrientConstraints+'/'+ this.state.searchIngredient} />
+
 		}
 
     return (
@@ -84,6 +85,7 @@ class Search extends Component {
         <SearchRecipe
           title = {(this.state.searchIgredient==='')? "Popular Recipes" : "Recommended Recipes"}
           ingredient = {this.state.searchIngredient}
+					nutrientConstraints = {this.props.match.params.nutrientConstraints}
 					retrieveRecipe={this.retrieveRecipe.bind(this)}
         />
       </div>

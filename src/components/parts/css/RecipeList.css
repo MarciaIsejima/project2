@@ -1,0 +1,32 @@
+.recipe-cards-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    margin-bottom: 10px;
+}
+
+.more-button-container{
+    display: grid;
+}
+.more-button{
+    color: #ff8500;  
+    font-size: 0.875em;
+    font-family: 'Quicksand', sans-serif; 
+    text-decoration-line: underline;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    justify-self: right;
+} 
+
+.top-button{
+    background-color: transparent;
+    border: none;
+    justify-self: end;
+    align-self: center;
+    justify-self: end;
+    margin-top: 10px;
+}
+.top-button-container{
+    display: grid;
+}

@@ -1,0 +1,78 @@
+section{
+    margin: 15px 0px;
+    padding: 1px 0px;
+}
+.selected-condition {
+    opacity: 1; 
+    font-weight: bold;
+}
+.condition-wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.unselected-condition {
+    opacity: 0.3;
+    font-weight: normal;
+}
+
+.conditions-list {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.8em;
+    list-style-type: none;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px 0px;
+}
+
+.conditions-list li {
+    width: 100px;
+    text-align: center;
+
+}
+
+.conditions-list li img {
+    height: 80px;
+    width: auto;
+    margin-bottom: 5px;
+}
+
+.conditions-list li:hover {
+	cursor: pointer;
+}
+
+.conditions-list li:hover div{
+	font-weight: bold;
+}
+
+.conditions-list li:hover img{
+	opacity: 1; 
+}
+
+.general-guideline-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.search-recipe-button{
+    /* padding: 5px 25px;
+    border: 3px solid #ff8500;
+    font-size: 0.875em;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    color: white;
+    border-radius: 40px;
+    height: 35px;
+    background-color: #ff8500;
+    text-align: center;
+    vertical-align: middle; */
+    align-self: center;
+    justify-self: end;
+}
+
+.condition-section-header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
-import * as nutrientAPI from '../api/nutrientApi';
-import TwoLevelPieChart from './Charts/TwoLevelPieChart';
-import './CaloriesDistribution.css';
+import * as nutrientAPI from '../../api/nutrientApi';
+import TwoLevelPieChart from '../charts/TwoLevelPieChart';
+import './css/CaloriesDistribution.css';
 
 const CaloriesDistribution = (props) => {
 

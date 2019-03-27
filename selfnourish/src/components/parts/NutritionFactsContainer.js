@@ -1,7 +1,7 @@
 import React from 'react';
 import NutrientsLevelContainer from './NutrientsLevelContainer';
 import CaloriesDistribution from './CaloriesDistribution';
-import './NutritionFactsContainer.css';
+import './css/NutritionFactsContainer.css';
 
 const NutritionFactsContainer = (props) => {
 

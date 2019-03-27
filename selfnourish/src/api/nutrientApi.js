@@ -8,13 +8,13 @@ function getNutrientsArray() {
         { name: "Trans Fat", id: 'FATRN', dvQuantity: 20, dvUnit: 'g', show: 0 },
         { name: "Cholesterol", id: 'CHOLE', dvQuantity: 300, dvUnit: 'mg', show: 0 },
         { name: "Sodium", id: 'NA', dvQuantity: 2400, dvUnit: 'mg', show: 1 },
-        { name: "Carbs", id: 'CHOCDF', dvQuantity: 300, dvUnit: 'g', show: 1 },
+        { name: "Carbs", id: 'CHOCDF', dvQuantity: 300, dvUnit: 'g', show: 0 },
         { name: "Fibre", id: 'FIBTG', dvQuantity: 25, dvUnit: 'g', show: 1 },
         { name: "Sugars", id: 'SUGAR', dvQuantity: 25, dvUnit: 'g', show: 0 }, // 37.5g for men and 25g for women - American Heart Association
         { name: "Protein", id: 'PROCNT', dvQuantity: 50, dvUnit: 'g', show: 1 }, //check source
         { name: "Vitamin A", id: 'VITA_IU', dvQuantity: 5000, dvUnit: 'IU', show: 0 }, // source: U.S. Food and Drug Administration 
         { name: "Vitamin C", id: 'VITC', dvQuantity: 60,  dvUnit: 'g', show: 0 },
-        { name: "Calcium", id: 'CA', dvQuantity: 1100, dvUnit: 'mg', show: 0 },
+        { name: "Calcium", id: 'CA', dvQuantity: 1100, dvUnit: 'mg', show: 1 },
         { name: "Iron", id: 'FE', dvQuantity: 14, dvUnit: 'mg', show: 0 }
     ];
     

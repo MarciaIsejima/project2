@@ -1,0 +1,5 @@
+MongoDB Atlas
+user: selfnourish-user
+pwd: IgZmQf0KbJ3XxCjm
+
+database name: selfnourish

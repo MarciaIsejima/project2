@@ -1,6 +1,6 @@
 import React from 'react';
-import './NutrientsLevelContainer.css';
-import * as nutrientAPI from '../api/nutrientApi';
+import './css/NutrientsLevelContainer.css';
+import * as nutrientAPI from '../../api/nutrientApi';
 import NutrientLevel from './NutrientLevel';
 
 const NutrientsLevelContainer = (props) => {

@@ -5,13 +5,13 @@ import {
     HashRouter,
 		Switch
 } from "react-router-dom";
-import Home from "./Home";
-import Condition from "./Condition";
-import Plans from "./Plans";
-import About from "./About";
-import Contact from "./Contact";
-import Search from "./Search";
-import SingleRecipe from './SingleRecipe';
+import Home from "./components/pages/Home";
+import Condition from "./components/pages/Condition";
+import Plans from "./components/pages/Plans";
+import About from "./components/pages/About";
+import Contact from "./components/pages/Contact";
+import Search from "./components/pages/Search";
+import SingleRecipe from './components/pages/SingleRecipe';
 
 class Main extends Component {
   render() {

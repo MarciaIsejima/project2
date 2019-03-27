@@ -33,18 +33,33 @@ html {
   color: rgb(92, 92, 92);
 }
 
-.button-orange {
-  padding: 5px 25px;
-  border: 3px solid #ff8500;
-  font-size: 0.875em;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  color: white;
+.button-normal{
+	padding: 15px 25px;
+	border-width: 3px;
+	border-style: solid;
+	font-family: Quicksand, sans-serif;
+	font-size: 0.875em;
+	font-weight: 700;
+}
+
+.button-large{
+	padding: 10px 25px;
+	border-width: 3px;
+	border-style: solid;
+	font-family: Quicksand, sans-serif;
+	font-size: 1em;
+	line-height: 0.5em;
+	font-weight: 700;
   border-radius: 40px;
-  height: 40px;
-  background-color: #ff8500;
-  text-align: center;
+	height: 44px;
+	text-align: center;
   vertical-align: middle;
+}
+
+.button-orange {
+  border-color: #ff8500;
+  color: white;
+  background-color: #ff8500;
 }
 
 .button-orange:hover{

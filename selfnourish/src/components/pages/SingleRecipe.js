@@ -1,9 +1,9 @@
 import React from 'react';
-import './SingleRecipe.css';
-import RecipeItem from './components/RecipeItem';
-import IngredientsList from './components/IngredientsList';
-import NutritionFactsContainer from './components/NutritionFactsContainer';
-import SearchRecipe from './components/SearchRecipe';
+import './css/SingleRecipe.css';
+import RecipeItem from '../parts/RecipeItem';
+import IngredientsList from '../parts/IngredientsList';
+import NutritionFactsContainer from '../parts/NutritionFactsContainer';
+import SearchRecipe from '../parts/SearchRecipe';
 
 class App extends React.Component {
   constructor(props) {
@@ -55,7 +55,9 @@ class App extends React.Component {
       return (
         <div className="App">
           <RecipeItem recipe={this.state.currentRecipe}/>
+					<hr className="horizontal-separator"/>
           <IngredientsList recipe={this.state.currentRecipe}/>
+					<hr className="horizontal-separator"/>
           <NutritionFactsContainer recipe={this.state.currentRecipe}/>
 					<SearchRecipe
 						title = "Related Recipes"

@@ -3,7 +3,7 @@ import ShowMore from "@tedconf/react-show-more";
 import RecipeCard from "./RecipeCard";
 import Icon from '@mdi/react'
 import { mdiChevronUpCircleOutline } from '@mdi/js'
-import './RecipeList.css'; 
+import './css/RecipeList.css'; 
 
 class RecipeList extends Component {
 

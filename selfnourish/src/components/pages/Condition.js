@@ -1,7 +1,7 @@
 import React from 'react';
-import './Condition.css';
-import SearchRecipe from "./components/SearchRecipe";
-import SimpleBarChart from './components/Charts/SimpleBarChart';
+import './css/Condition.css';
+import SearchRecipe from "../parts/SearchRecipe";
+import SimpleBarChart from '../charts/SimpleBarChart';
 import {Redirect} from "react-router-dom";
 
 class Condition extends React.Component {

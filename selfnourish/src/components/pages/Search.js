@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import './Search.css';
+import './css/Search.css';
 import Icon from '@mdi/react';
 import { mdiMagnify } from '@mdi/js';
-import SearchRecipe from "./components/SearchRecipe";
+import SearchRecipe from "../parts/SearchRecipe";
 import {Redirect} from "react-router-dom";
 
 class Search extends Component {

@@ -1,0 +1,184 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.howto{
+  margin-top: 40px;
+}
+
+ul>li {
+  margin-top:20px;
+  
+}
+
+/* Marcia 's css */
+
+
+
+html {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  color: rgb(126, 126, 126);
+}
+
+
+
+.main-wrapper {
+    max-width: 900px;
+    margin: auto;
+}
+
+.content {
+  max-width: 800px;
+  margin: auto;
+}
+
+.heading-2 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 1.5;
+    color: rgb(92, 92, 92);
+}
+
+.heading-3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2em;
+  font-weight: 700;
+  line-height: 1;
+  color: rgb(92, 92, 92);
+}
+
+.button-orange {
+  padding: 5px 25px;
+  border: 3px solid #ff8500;
+  font-size: 0.875em;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  color: white;
+  border-radius: 40px;
+  height: 40px;
+  background-color: #ff8500;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+.button-orange:hover{
+ cursor: pointer;
+}
+
+.button-green {
+  padding: 5px 25px;
+  border: 3px solid #90d200;
+  font-size: 0.875em;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  color: white;
+  border-radius: 40px;
+  height: 40px;
+  background-color: #90d200;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+.paragraph {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9em;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgb(92, 92, 92);
+}
+
+.paragraph-small {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.75em;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgb(92, 92, 92);
+}
+
+a{
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9em;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgb(92, 92, 92);
+  text-decoration-style: none;
+}
+
+a:visited{
+  color: rgb(92, 92, 92);
+}
+
+
+/* NAVBAR */
+.active {
+  color:  #ff8500;
+}
+
+.active:visited{
+  color: #ff8500;
+}
+
+ul.header li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+}
+ul.header {
+  background-color: transparent;
+  padding: 0;
+}
+ul.header li a {
+  color:  rgb(71, 71, 71);
+  font-weight: bold;
+  font-size: 0.9em;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 2px 12px;
+  display: inline-block;
+  margin: 0px 15px;
+}
+
+ul li:last-child a{
+  
+  border:  #ff8500 solid 2px;
+  border-radius: 20px;
+  float: right;
+}
+

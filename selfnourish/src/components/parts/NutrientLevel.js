@@ -1,6 +1,5 @@
 import React from 'react';
 import StyledProgressbar from '../charts/CircularProgressBar';
-import './css/NutrientLevel.css'
 
 const NutrientLevel = (props) => {
 

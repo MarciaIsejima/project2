@@ -8,7 +8,7 @@ function StyledProgressbar(props) {
       text={props.text}
       // Path width must be customized with strokeWidth,
       // since it informs dimension calculations.
-      strokeWidth={15}
+      strokeWidth={18}
       // You can override styles either by specifying this "styles" prop,
       // or by overriding the default CSS here:
       // https://github.com/iqnivek/react-circular-progressbar/blob/master/src/styles.css
@@ -22,7 +22,7 @@ function StyledProgressbar(props) {
           // Tweak path to use flat or rounded ends:
           strokeLinecap: 'butt',
           // Tweak transition animation:
-          transition: 'stroke-dashoffset 0.5s ease 0s',
+          transition: 'stroke-dashoffset 0.1s ease 0s',
         },
         // Customize the circle behind the path
         trail: {

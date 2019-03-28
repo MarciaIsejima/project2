@@ -1,5 +1,4 @@
 import React from 'react';
-import './css/NutrientsLevelContainer.css';
 import * as nutrientAPI from '../../api/nutrientApi';
 import NutrientLevel from './NutrientLevel';
 

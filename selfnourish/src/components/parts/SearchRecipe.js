@@ -73,6 +73,7 @@ class SearchRecipe extends Component {
           title = {this.props.title}
           list = {list}
 					retrieveRecipe={this.retrieveRecipe.bind(this)}
+					isGrouped = {this.props.isGrouped}
         />
       </div>
     );

@@ -4,13 +4,15 @@ import RecipeItem from '../parts/RecipeItem';
 import IngredientsList from '../parts/IngredientsList';
 import NutritionFactsContainer from '../parts/NutritionFactsContainer';
 import SearchRecipe from '../parts/SearchRecipe';
+import {Link} from "react-router-dom";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       error: null,
-			currentRecipe: {}
+			currentRecipe: {},
+			redirectToFavourite: false,
     };
   }
 
@@ -39,12 +41,22 @@ class App extends React.Component {
     )
   };
 
-  
+	// if user clicked on Favourite button
+	redirectToSearch(){
+		this.setState(
+			{redirectToFavourite: true}
+		);
+	}
+
   componentDidMount() {
  		this.retrieveRecipe(this.props.match.params.recipeId)
   }
 
   render() {
+
+		if (this.state.redirectToFavourite) {
+			return <Link to={'/contact'} />
+		}
 
     if(!this.state.currentRecipe.images){
       return null
@@ -59,11 +71,14 @@ class App extends React.Component {
           <IngredientsList recipe={this.state.currentRecipe}/>
 					<hr className="horizontal-separator"/>
           <NutritionFactsContainer recipe={this.state.currentRecipe}/>
+					<div className="favourite-div"><button className="favourite-button button-green" onClick={()=>{this.redirectToSearch()}}>Add to Favourites</button></div>
 					<SearchRecipe
 						title = "Related Recipes"
+						isGrouped = {false} //indicates if this section belongs to the same team of other elements on the page
 						ingredient = {this.props.match.params.searchIngredient}
 						nutrientConstraints = {this.props.match.params.nutrientConstraints}
 						retrieveRecipe={this.retrieveRecipe.bind(this)}
+						
 					/>
 				</div>       
       );

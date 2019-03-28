@@ -16,8 +16,7 @@ const NutritionFactsContainer = (props) => {
                     recipe = {props.recipe}
                 />
             </div>
-            <div className="favourite-div"><button className="button-green">Add to Favourites</button></div>
-            
+           
         </section>
         
     )

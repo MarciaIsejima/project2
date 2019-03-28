@@ -22,7 +22,7 @@ class RecipeList extends Component {
 		return (
 
 			<section className="recipe-list" style={{marginBottom: "4rem"}}>
-				<h2 className="heading-2">{this.props.title}</h2>
+				<h2 className={this.props.isGrouped ? "heading-2" : "heading-3" }>{this.props.title}</h2>
 				<ShowMore items={this.props.list} by={4}>
 				{({ current, onMore }) => (
 					<div>
